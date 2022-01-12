@@ -1,11 +1,12 @@
 ﻿Public Class Dashboard
-    Dim com1 As IO.Ports.SerialPort = Nothing
+    Public com1 As IO.Ports.SerialPort = Nothing
     Private Sub Button_Exit_Click(sender As Object, e As EventArgs) Handles Button_Exit.Click
         Me.Close()
     End Sub
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetMaxChart()
         ViewPort()
+        SetTimer()
     End Sub
     Dim Pos As Point
     Private Sub PanelTop_MouseMove(sender As Object, e As MouseEventArgs) Handles PanelTop.MouseMove
@@ -15,24 +16,14 @@
         Pos = Control.MousePosition
     End Sub
 
-    Private Sub TimerWatch_Tick(sender As Object, e As EventArgs) Handles TimerWatch.Tick
-        LabelDateDay.Text = Today
-        LabelTime.Text = TimeOfDay
-        'LineWaveECG(50 * Rnd(2))
-        'SPO2
-        If TimerReceived.Enabled = False Then
-            LineWaveSpo2(50)
-        ElseIf TimerReceived.Enabled = True Then
 
-        End If
-    End Sub
     Private Sub ButtonDemo_Click(sender As Object, e As EventArgs) Handles ButtonDemo.Click
         Demo.Show()
     End Sub
 
     Public MinuteValue As Integer = 60
     Private Sub ButtonStart_Click(sender As Object, e As EventArgs) Handles ButtonStart.Click
-
+        com1.WriteLine("w")
     End Sub
 
     Private Sub ButtonPatient_Click(sender As Object, e As EventArgs) Handles ButtonPatient.Click
@@ -84,6 +75,7 @@
             IDControl1 = IDControl1 + 8
         End If
         LabelIDControl1.Text = "R - I " & IDControl1
+        com1.Write(IDControl1)
     End Sub
 
     Private Sub ButtonIDMin1_Click(sender As Object, e As EventArgs) Handles ButtonIDMin1.Click
@@ -93,6 +85,8 @@
             IDControl1 = IDControl1 - 8
         End If
         LabelIDControl1.Text = "R - I " & IDControl1
+        com1.Write(IDControl1)
+
     End Sub
 
     Dim IDControl2 As Integer = 536
@@ -103,6 +97,7 @@
             IDControl2 = IDControl2 + 8
         End If
         LabelIDControl2.Text = "R - D " & IDControl2
+        com1.Write(IDControl2)
     End Sub
 
     Private Sub ButtonIDMin2_Click(sender As Object, e As EventArgs) Handles ButtonIDMin2.Click
@@ -112,6 +107,7 @@
             IDControl2 = IDControl2 - 8
         End If
         LabelIDControl2.Text = "R - D " & IDControl2
+        com1.Write(IDControl2)
     End Sub
 
     Dim Pressure As Integer = 80
@@ -174,6 +170,7 @@
     End Sub
 
     Private Sub ButtonStop_Click(sender As Object, e As EventArgs) Handles ButtonStop.Click
+        com1.WriteLine("e")
         LabelType.Text = " TYPE : ADULT "
     End Sub
     Dim BtnFreeze As Boolean = False
@@ -182,12 +179,12 @@
             Case False
                 ButtonFreeze.Text = " CONTINUE "
                 BtnFreeze = True
-                TimerWatch.Enabled = False
+                TimerReal.Enabled = False
 
             Case True
                 ButtonFreeze.Text = " FREEZE "
                 BtnFreeze = False
-                TimerWatch.Enabled = True
+                TimerReal.Enabled = True
         End Select
     End Sub
     Sub ViewPort()
@@ -216,26 +213,28 @@
 
     Private Sub ButtonConnect_Click(sender As Object, e As EventArgs) Handles ButtonConnect.Click
         COM5Connecting()
+        ButtonActive()
     End Sub
 
     Private Sub ButtonDisconnect_Click(sender As Object, e As EventArgs) Handles ButtonDisconnect.Click
         com1.Close()
         TimerReceived.Enabled = False
+        TimerSend.Enabled = False
         LabelPort.Text = "DISCONNECT"
         LabelPort.ForeColor = Color.Red
-
+        ButtonDisable()
     End Sub
     Dim RCData As String
     Dim Bprm As Double
-    Private Sub TimerReceived_Tick(sender As Object, e As EventArgs) Handles TimerReceived.Tick
-
-        Dim ReceivedData As String = com1.ReadLine()
-        Dim testArray() As String = ReceivedData.Split(New String() {";"}, StringSplitOptions.None)
-        For Each s As String In testArray
-            LineWaveSpo2(testArray(0))
-            LabelWaveSpo2.Text = "Wave :" & testArray(0)
-            LabelHB.Text = "HB : " & testArray(1)
-        Next
-
+    Sub ButtonActive()
+        ButtonStart.Enabled = True
+        ButtonStop.Enabled = True
     End Sub
+
+
+    Sub ButtonDisable()
+        ButtonStart.Enabled = False
+        ButtonStop.Enabled = False
+    End Sub
+
 End Class
