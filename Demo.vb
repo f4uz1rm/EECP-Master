@@ -6,15 +6,15 @@
     Private Sub ButtonStart_Click(sender As Object, e As EventArgs) Handles ButtonStart.Click
         If TextBoxPassword.Text = "1234" Then
             Dashboard.LabelType.Text = " TYPE : DEMO "
+            LineWaveECG(Rnd)
             Me.Close()
         Else
             MsgBox("Password Salah", MsgBoxStyle.Information)
         End If
-
     End Sub
-
     Dim Pos As Point
     Private Sub PanelTop_MouseMove(sender As Object, e As MouseEventArgs) Handles PanelTop.MouseMove
+        'Untuk memindahkan posisi Form 
         If e.Button = Windows.Forms.MouseButtons.Left Then
             Me.Location += Control.MousePosition - Pos
         End If

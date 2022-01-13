@@ -2,6 +2,8 @@
     Public WithEvents TimerReceived As New System.Windows.Forms.Timer
     Public WithEvents TimerSend As New System.Windows.Forms.Timer
     Public WithEvents TimerReal As New System.Windows.Forms.Timer
+    Public WithEvents TimerRevers As New System.Windows.Forms.Timer
+    Dim Seconds As Integer = 60
     Sub SetTimer()
         'Timer Real Digunakan untuk jam dan tanggal
         TimerReal.Enabled = True
@@ -10,6 +12,8 @@
         TimerReceived.Interval = 35
         'Timer Send untuk sementara di gunakan untuk mengirim data start dan stop 
         TimerSend.Interval = 100
+        'Timer Revers untuk menghitung mundur pada button start
+        TimerRevers.Interval = 100
     End Sub
     Public Sub TimerReceived_Tick(sender As Object, e As System.EventArgs) Handles TimerReceived.Tick
         Dim HB As Double
@@ -29,18 +33,31 @@
         Next
     End Sub
     Public Sub TimerSend_Tick(sender As Object, e As System.EventArgs) Handles TimerSend.Tick
-        Dashboard.com1.WriteLine("q") 'Mengirimkan katakter q ke alat
+        SendDataSerialPort("q")
     End Sub
 
     Private Sub TimerReal_Tick(sender As Object, e As EventArgs) Handles TimerReal.Tick
         Dashboard.LabelDateDay.Text = Today
         Dashboard.LabelTime.Text = TimeOfDay
         LineWaveECG(50) 'Memanggil Fungsi LineWave pada Modul Wave
+        LineWavePressure(50) ' Memanggil Fungsi LineWace pada Modul Wave
         'SPO2
         If TimerReceived.Enabled = False Then
             LineWaveSpo2(50)
         ElseIf TimerReceived.Enabled = True Then
 
+        End If
+    End Sub
+
+    Public Sub TimerRevers_Tick(sender As Object, e As System.EventArgs) Handles TimerRevers.Tick
+        If Seconds = 0 Then
+            Dashboard.ButtonStart.Text = "START"
+            TimerRevers.Enabled = False
+            Seconds = 60
+            SendDataSerialPort("e")
+        Else
+            Seconds = Seconds - 1
+            Dashboard.ButtonStart.Text = Seconds
         End If
     End Sub
 End Module

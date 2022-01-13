@@ -23,22 +23,22 @@ Partial Class Dashboard
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Series6 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series7 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Series8 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series9 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Series10 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea6 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Series11 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Series12 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.PanelLeft = New System.Windows.Forms.Panel()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.LabelTimerCompressor = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.LabelTime = New System.Windows.Forms.Label()
         Me.LabelDateDay = New System.Windows.Forms.Label()
-        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.PanelTime = New System.Windows.Forms.Panel()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Label20 = New System.Windows.Forms.Label()
@@ -47,7 +47,7 @@ Partial Class Dashboard
         Me.Label24 = New System.Windows.Forms.Label()
         Me.ButtonMinPressure = New System.Windows.Forms.Button()
         Me.ButtonPlusPressure = New System.Windows.Forms.Button()
-        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.PanelPressure = New System.Windows.Forms.Panel()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Panel17 = New System.Windows.Forms.Panel()
         Me.Label29 = New System.Windows.Forms.Label()
@@ -60,14 +60,14 @@ Partial Class Dashboard
         Me.Label35 = New System.Windows.Forms.Label()
         Me.LabelB = New System.Windows.Forms.Label()
         Me.LabelA = New System.Windows.Forms.Label()
-        Me.Panel18 = New System.Windows.Forms.Panel()
+        Me.PanelSPO = New System.Windows.Forms.Panel()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.LabelAmpEcg = New System.Windows.Forms.Label()
         Me.ButtonMinEcg = New System.Windows.Forms.Button()
         Me.ButtonPlusEcg = New System.Windows.Forms.Button()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.PanelECG = New System.Windows.Forms.Panel()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel_I3 = New System.Windows.Forms.Panel()
@@ -82,7 +82,7 @@ Partial Class Dashboard
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.PanelID = New System.Windows.Forms.Panel()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Button_Exit = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -109,7 +109,7 @@ Partial Class Dashboard
         Me.ButtonFreeze = New System.Windows.Forms.Button()
         Me.ButtonMm = New System.Windows.Forms.Button()
         Me.ButtonStep = New System.Windows.Forms.Button()
-        Me.Button14 = New System.Windows.Forms.Button()
+        Me.ButtonPembanding = New System.Windows.Forms.Button()
         Me.ButtonStart = New System.Windows.Forms.Button()
         Me.ButtonStandby = New System.Windows.Forms.Button()
         Me.ButtonStop = New System.Windows.Forms.Button()
@@ -121,15 +121,15 @@ Partial Class Dashboard
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.PanelLeft.SuspendLayout()
         Me.Panel10.SuspendLayout()
-        Me.Panel11.SuspendLayout()
+        Me.PanelTime.SuspendLayout()
         Me.Panel9.SuspendLayout()
-        Me.Panel8.SuspendLayout()
+        Me.PanelPressure.SuspendLayout()
         Me.Panel17.SuspendLayout()
-        Me.Panel18.SuspendLayout()
+        Me.PanelSPO.SuspendLayout()
         Me.Panel7.SuspendLayout()
-        Me.Panel6.SuspendLayout()
+        Me.PanelECG.SuspendLayout()
         Me.Panel5.SuspendLayout()
-        Me.Panel16.SuspendLayout()
+        Me.PanelID.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.PanelTop.SuspendLayout()
@@ -147,17 +147,17 @@ Partial Class Dashboard
         '
         Me.PanelLeft.BackColor = System.Drawing.SystemColors.Control
         Me.PanelLeft.Controls.Add(Me.Panel10)
-        Me.PanelLeft.Controls.Add(Me.Panel11)
+        Me.PanelLeft.Controls.Add(Me.PanelTime)
         Me.PanelLeft.Controls.Add(Me.Panel9)
-        Me.PanelLeft.Controls.Add(Me.Panel8)
+        Me.PanelLeft.Controls.Add(Me.PanelPressure)
         Me.PanelLeft.Controls.Add(Me.Panel17)
         Me.PanelLeft.Controls.Add(Me.LabelB)
         Me.PanelLeft.Controls.Add(Me.LabelA)
-        Me.PanelLeft.Controls.Add(Me.Panel18)
+        Me.PanelLeft.Controls.Add(Me.PanelSPO)
         Me.PanelLeft.Controls.Add(Me.Panel7)
-        Me.PanelLeft.Controls.Add(Me.Panel6)
+        Me.PanelLeft.Controls.Add(Me.PanelECG)
         Me.PanelLeft.Controls.Add(Me.Panel5)
-        Me.PanelLeft.Controls.Add(Me.Panel16)
+        Me.PanelLeft.Controls.Add(Me.PanelID)
         Me.PanelLeft.Controls.Add(Me.Button_Exit)
         Me.PanelLeft.Controls.Add(Me.Panel3)
         Me.PanelLeft.Controls.Add(Me.Panel2)
@@ -216,15 +216,15 @@ Partial Class Dashboard
         Me.LabelDateDay.TabIndex = 3
         Me.LabelDateDay.Text = "03 / 20 /2019"
         '
-        'Panel11
+        'PanelTime
         '
-        Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(52, Byte), Integer))
-        Me.Panel11.Controls.Add(Me.Label30)
-        Me.Panel11.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel11.Location = New System.Drawing.Point(0, 712)
-        Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(266, 43)
-        Me.Panel11.TabIndex = 22
+        Me.PanelTime.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(52, Byte), Integer))
+        Me.PanelTime.Controls.Add(Me.Label30)
+        Me.PanelTime.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelTime.Location = New System.Drawing.Point(0, 712)
+        Me.PanelTime.Name = "PanelTime"
+        Me.PanelTime.Size = New System.Drawing.Size(266, 43)
+        Me.PanelTime.TabIndex = 22
         '
         'Label30
         '
@@ -318,15 +318,15 @@ Partial Class Dashboard
         Me.ButtonPlusPressure.Text = ">"
         Me.ButtonPlusPressure.UseVisualStyleBackColor = False
         '
-        'Panel8
+        'PanelPressure
         '
-        Me.Panel8.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(52, Byte), Integer))
-        Me.Panel8.Controls.Add(Me.Label19)
-        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel8.Location = New System.Drawing.Point(0, 577)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(266, 43)
-        Me.Panel8.TabIndex = 20
+        Me.PanelPressure.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(52, Byte), Integer))
+        Me.PanelPressure.Controls.Add(Me.Label19)
+        Me.PanelPressure.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelPressure.Location = New System.Drawing.Point(0, 577)
+        Me.PanelPressure.Name = "PanelPressure"
+        Me.PanelPressure.Size = New System.Drawing.Size(266, 43)
+        Me.PanelPressure.TabIndex = 20
         '
         'Label19
         '
@@ -464,15 +464,15 @@ Partial Class Dashboard
         Me.LabelA.TabIndex = 69
         Me.LabelA.Text = "A"
         '
-        'Panel18
+        'PanelSPO
         '
-        Me.Panel18.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(52, Byte), Integer))
-        Me.Panel18.Controls.Add(Me.Label36)
-        Me.Panel18.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel18.Location = New System.Drawing.Point(0, 399)
-        Me.Panel18.Name = "Panel18"
-        Me.Panel18.Size = New System.Drawing.Size(266, 43)
-        Me.Panel18.TabIndex = 18
+        Me.PanelSPO.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(52, Byte), Integer))
+        Me.PanelSPO.Controls.Add(Me.Label36)
+        Me.PanelSPO.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelSPO.Location = New System.Drawing.Point(0, 399)
+        Me.PanelSPO.Name = "PanelSPO"
+        Me.PanelSPO.Size = New System.Drawing.Size(266, 43)
+        Me.PanelSPO.TabIndex = 18
         '
         'Label36
         '
@@ -542,15 +542,15 @@ Partial Class Dashboard
         Me.Label16.TabIndex = 7
         Me.Label16.Text = "HR"
         '
-        'Panel6
+        'PanelECG
         '
-        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(52, Byte), Integer))
-        Me.Panel6.Controls.Add(Me.Label12)
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel6.Location = New System.Drawing.Point(0, 278)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(266, 43)
-        Me.Panel6.TabIndex = 12
+        Me.PanelECG.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(52, Byte), Integer))
+        Me.PanelECG.Controls.Add(Me.Label12)
+        Me.PanelECG.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelECG.Location = New System.Drawing.Point(0, 278)
+        Me.PanelECG.Name = "PanelECG"
+        Me.PanelECG.Size = New System.Drawing.Size(266, 43)
+        Me.PanelECG.TabIndex = 12
         '
         'Label12
         '
@@ -707,15 +707,15 @@ Partial Class Dashboard
         Me.Label7.TabIndex = 6
         Me.Label7.Text = "I1"
         '
-        'Panel16
+        'PanelID
         '
-        Me.Panel16.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(52, Byte), Integer))
-        Me.Panel16.Controls.Add(Me.Label28)
-        Me.Panel16.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel16.Location = New System.Drawing.Point(0, 88)
-        Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(266, 43)
-        Me.Panel16.TabIndex = 10
+        Me.PanelID.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(52, Byte), Integer))
+        Me.PanelID.Controls.Add(Me.Label28)
+        Me.PanelID.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelID.Location = New System.Drawing.Point(0, 88)
+        Me.PanelID.Name = "PanelID"
+        Me.PanelID.Size = New System.Drawing.Size(266, 43)
+        Me.PanelID.TabIndex = 10
         '
         'Label28
         '
@@ -847,34 +847,34 @@ Partial Class Dashboard
         Me.Chart1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Chart1.BackColor = System.Drawing.Color.Transparent
-        ChartArea1.AxisX.LabelStyle.Enabled = False
-        ChartArea1.AxisX.LineColor = System.Drawing.Color.Transparent
-        ChartArea1.AxisX.MajorGrid.Enabled = False
-        ChartArea1.AxisX.MajorTickMark.Enabled = False
-        ChartArea1.AxisY.LabelStyle.Enabled = False
-        ChartArea1.AxisY.LineColor = System.Drawing.Color.Transparent
-        ChartArea1.AxisY.LineWidth = 50
-        ChartArea1.AxisY.MajorGrid.Enabled = False
-        ChartArea1.AxisY.MajorTickMark.Enabled = False
-        ChartArea1.BackColor = System.Drawing.Color.Transparent
-        ChartArea1.BorderColor = System.Drawing.Color.Transparent
-        ChartArea1.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
+        ChartArea4.AxisX.LabelStyle.Enabled = False
+        ChartArea4.AxisX.LineColor = System.Drawing.Color.Transparent
+        ChartArea4.AxisX.MajorGrid.Enabled = False
+        ChartArea4.AxisX.MajorTickMark.Enabled = False
+        ChartArea4.AxisY.LabelStyle.Enabled = False
+        ChartArea4.AxisY.LineColor = System.Drawing.Color.Transparent
+        ChartArea4.AxisY.LineWidth = 50
+        ChartArea4.AxisY.MajorGrid.Enabled = False
+        ChartArea4.AxisY.MajorTickMark.Enabled = False
+        ChartArea4.BackColor = System.Drawing.Color.Transparent
+        ChartArea4.BorderColor = System.Drawing.Color.Transparent
+        ChartArea4.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea4)
         Me.Chart1.IsSoftShadows = False
         Me.Chart1.Location = New System.Drawing.Point(40, 19)
         Me.Chart1.Name = "Chart1"
-        Series1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center
-        Series1.ChartArea = "ChartArea1"
-        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series1.Color = System.Drawing.Color.Lime
-        Series1.Name = "ecg1a"
-        Series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[Double]
-        Series2.ChartArea = "ChartArea1"
-        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series2.Color = System.Drawing.Color.Lime
-        Series2.Name = "ecg1b"
-        Me.Chart1.Series.Add(Series1)
-        Me.Chart1.Series.Add(Series2)
+        Series7.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center
+        Series7.ChartArea = "ChartArea1"
+        Series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series7.Color = System.Drawing.Color.Lime
+        Series7.Name = "ecg1a"
+        Series7.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[Double]
+        Series8.ChartArea = "ChartArea1"
+        Series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series8.Color = System.Drawing.Color.Lime
+        Series8.Name = "ecg1b"
+        Me.Chart1.Series.Add(Series7)
+        Me.Chart1.Series.Add(Series8)
         Me.Chart1.Size = New System.Drawing.Size(692, 195)
         Me.Chart1.TabIndex = 68
         Me.Chart1.Text = "Chart3"
@@ -902,34 +902,34 @@ Partial Class Dashboard
         Me.Chart2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Chart2.BackColor = System.Drawing.Color.Transparent
-        ChartArea2.AxisX.LabelStyle.Enabled = False
-        ChartArea2.AxisX.LineColor = System.Drawing.Color.Transparent
-        ChartArea2.AxisX.MajorGrid.Enabled = False
-        ChartArea2.AxisX.MajorTickMark.Enabled = False
-        ChartArea2.AxisY.LabelStyle.Enabled = False
-        ChartArea2.AxisY.LineColor = System.Drawing.Color.Transparent
-        ChartArea2.AxisY.LineWidth = 50
-        ChartArea2.AxisY.MajorGrid.Enabled = False
-        ChartArea2.AxisY.MajorTickMark.Enabled = False
-        ChartArea2.BackColor = System.Drawing.Color.Transparent
-        ChartArea2.BorderColor = System.Drawing.Color.Transparent
-        ChartArea2.Name = "ChartArea1"
-        Me.Chart2.ChartAreas.Add(ChartArea2)
+        ChartArea5.AxisX.LabelStyle.Enabled = False
+        ChartArea5.AxisX.LineColor = System.Drawing.Color.Transparent
+        ChartArea5.AxisX.MajorGrid.Enabled = False
+        ChartArea5.AxisX.MajorTickMark.Enabled = False
+        ChartArea5.AxisY.LabelStyle.Enabled = False
+        ChartArea5.AxisY.LineColor = System.Drawing.Color.Transparent
+        ChartArea5.AxisY.LineWidth = 50
+        ChartArea5.AxisY.MajorGrid.Enabled = False
+        ChartArea5.AxisY.MajorTickMark.Enabled = False
+        ChartArea5.BackColor = System.Drawing.Color.Transparent
+        ChartArea5.BorderColor = System.Drawing.Color.Transparent
+        ChartArea5.Name = "ChartArea1"
+        Me.Chart2.ChartAreas.Add(ChartArea5)
         Me.Chart2.IsSoftShadows = False
         Me.Chart2.Location = New System.Drawing.Point(40, 19)
         Me.Chart2.Name = "Chart2"
-        Series3.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center
-        Series3.ChartArea = "ChartArea1"
-        Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series3.Color = System.Drawing.Color.Lime
-        Series3.Name = "ecg1a"
-        Series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[Double]
-        Series4.ChartArea = "ChartArea1"
-        Series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series4.Color = System.Drawing.Color.Lime
-        Series4.Name = "ecg1b"
-        Me.Chart2.Series.Add(Series3)
-        Me.Chart2.Series.Add(Series4)
+        Series9.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center
+        Series9.ChartArea = "ChartArea1"
+        Series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series9.Color = System.Drawing.Color.Lime
+        Series9.Name = "pressure1"
+        Series9.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[Double]
+        Series10.ChartArea = "ChartArea1"
+        Series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series10.Color = System.Drawing.Color.Lime
+        Series10.Name = "pressure2"
+        Me.Chart2.Series.Add(Series9)
+        Me.Chart2.Series.Add(Series10)
         Me.Chart2.Size = New System.Drawing.Size(692, 195)
         Me.Chart2.TabIndex = 68
         Me.Chart2.Text = "Chart1"
@@ -972,34 +972,34 @@ Partial Class Dashboard
         Me.Chart3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Chart3.BackColor = System.Drawing.Color.Transparent
-        ChartArea3.AxisX.LabelStyle.Enabled = False
-        ChartArea3.AxisX.LineColor = System.Drawing.Color.Transparent
-        ChartArea3.AxisX.MajorGrid.Enabled = False
-        ChartArea3.AxisX.MajorTickMark.Enabled = False
-        ChartArea3.AxisY.LabelStyle.Enabled = False
-        ChartArea3.AxisY.LineColor = System.Drawing.Color.Transparent
-        ChartArea3.AxisY.LineWidth = 50
-        ChartArea3.AxisY.MajorGrid.Enabled = False
-        ChartArea3.AxisY.MajorTickMark.Enabled = False
-        ChartArea3.BackColor = System.Drawing.Color.Transparent
-        ChartArea3.BorderColor = System.Drawing.Color.Transparent
-        ChartArea3.Name = "ChartArea1"
-        Me.Chart3.ChartAreas.Add(ChartArea3)
+        ChartArea6.AxisX.LabelStyle.Enabled = False
+        ChartArea6.AxisX.LineColor = System.Drawing.Color.Transparent
+        ChartArea6.AxisX.MajorGrid.Enabled = False
+        ChartArea6.AxisX.MajorTickMark.Enabled = False
+        ChartArea6.AxisY.LabelStyle.Enabled = False
+        ChartArea6.AxisY.LineColor = System.Drawing.Color.Transparent
+        ChartArea6.AxisY.LineWidth = 50
+        ChartArea6.AxisY.MajorGrid.Enabled = False
+        ChartArea6.AxisY.MajorTickMark.Enabled = False
+        ChartArea6.BackColor = System.Drawing.Color.Transparent
+        ChartArea6.BorderColor = System.Drawing.Color.Transparent
+        ChartArea6.Name = "ChartArea1"
+        Me.Chart3.ChartAreas.Add(ChartArea6)
         Me.Chart3.IsSoftShadows = False
         Me.Chart3.Location = New System.Drawing.Point(40, 19)
         Me.Chart3.Name = "Chart3"
-        Series5.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center
-        Series5.ChartArea = "ChartArea1"
-        Series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series5.Color = System.Drawing.Color.Lime
-        Series5.Name = "spo2a"
-        Series5.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[Double]
-        Series6.ChartArea = "ChartArea1"
-        Series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series6.Color = System.Drawing.Color.Lime
-        Series6.Name = "spo2b"
-        Me.Chart3.Series.Add(Series5)
-        Me.Chart3.Series.Add(Series6)
+        Series11.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center
+        Series11.ChartArea = "ChartArea1"
+        Series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series11.Color = System.Drawing.Color.Lime
+        Series11.Name = "spo2a"
+        Series11.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[Double]
+        Series12.ChartArea = "ChartArea1"
+        Series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series12.Color = System.Drawing.Color.Lime
+        Series12.Name = "spo2b"
+        Me.Chart3.Series.Add(Series11)
+        Me.Chart3.Series.Add(Series12)
         Me.Chart3.Size = New System.Drawing.Size(692, 195)
         Me.Chart3.TabIndex = 68
         Me.Chart3.Text = "Chart2"
@@ -1013,7 +1013,7 @@ Partial Class Dashboard
         Me.Panel12.Controls.Add(Me.ButtonFreeze)
         Me.Panel12.Controls.Add(Me.ButtonMm)
         Me.Panel12.Controls.Add(Me.ButtonStep)
-        Me.Panel12.Controls.Add(Me.Button14)
+        Me.Panel12.Controls.Add(Me.ButtonPembanding)
         Me.Panel12.Controls.Add(Me.ButtonStart)
         Me.Panel12.Controls.Add(Me.ButtonStandby)
         Me.Panel12.Controls.Add(Me.ButtonStop)
@@ -1036,6 +1036,7 @@ Partial Class Dashboard
         '
         'ButtonPatient
         '
+        Me.ButtonPatient.Enabled = False
         Me.ButtonPatient.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.ButtonPatient.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonPatient.Location = New System.Drawing.Point(478, 79)
@@ -1047,6 +1048,7 @@ Partial Class Dashboard
         '
         'ButtonSave
         '
+        Me.ButtonSave.Enabled = False
         Me.ButtonSave.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.ButtonSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonSave.Location = New System.Drawing.Point(325, 79)
@@ -1058,6 +1060,7 @@ Partial Class Dashboard
         '
         'ButtonFreeze
         '
+        Me.ButtonFreeze.Enabled = False
         Me.ButtonFreeze.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.ButtonFreeze.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonFreeze.Location = New System.Drawing.Point(172, 79)
@@ -1069,6 +1072,7 @@ Partial Class Dashboard
         '
         'ButtonMm
         '
+        Me.ButtonMm.Enabled = False
         Me.ButtonMm.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.ButtonMm.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonMm.Location = New System.Drawing.Point(19, 79)
@@ -1080,6 +1084,7 @@ Partial Class Dashboard
         '
         'ButtonStep
         '
+        Me.ButtonStep.Enabled = False
         Me.ButtonStep.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.ButtonStep.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonStep.Location = New System.Drawing.Point(631, 14)
@@ -1089,19 +1094,21 @@ Partial Class Dashboard
         Me.ButtonStep.Text = "3 STEP"
         Me.ButtonStep.UseVisualStyleBackColor = True
         '
-        'Button14
+        'ButtonPembanding
         '
-        Me.Button14.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Button14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button14.Location = New System.Drawing.Point(478, 14)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(147, 59)
-        Me.Button14.TabIndex = 3
-        Me.Button14.Text = "1 : 1"
-        Me.Button14.UseVisualStyleBackColor = True
+        Me.ButtonPembanding.Enabled = False
+        Me.ButtonPembanding.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.ButtonPembanding.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonPembanding.Location = New System.Drawing.Point(478, 14)
+        Me.ButtonPembanding.Name = "ButtonPembanding"
+        Me.ButtonPembanding.Size = New System.Drawing.Size(147, 59)
+        Me.ButtonPembanding.TabIndex = 3
+        Me.ButtonPembanding.Text = "1 : 1"
+        Me.ButtonPembanding.UseVisualStyleBackColor = True
         '
         'ButtonStart
         '
+        Me.ButtonStart.Enabled = False
         Me.ButtonStart.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.ButtonStart.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonStart.Location = New System.Drawing.Point(325, 14)
@@ -1113,6 +1120,7 @@ Partial Class Dashboard
         '
         'ButtonStandby
         '
+        Me.ButtonStandby.Enabled = False
         Me.ButtonStandby.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.ButtonStandby.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonStandby.Location = New System.Drawing.Point(172, 14)
@@ -1160,6 +1168,7 @@ Partial Class Dashboard
         '
         'ButtonDisconnect
         '
+        Me.ButtonDisconnect.Enabled = False
         Me.ButtonDisconnect.Location = New System.Drawing.Point(264, 12)
         Me.ButtonDisconnect.Name = "ButtonDisconnect"
         Me.ButtonDisconnect.Size = New System.Drawing.Size(75, 23)
@@ -1205,24 +1214,24 @@ Partial Class Dashboard
         Me.PanelLeft.PerformLayout()
         Me.Panel10.ResumeLayout(False)
         Me.Panel10.PerformLayout()
-        Me.Panel11.ResumeLayout(False)
-        Me.Panel11.PerformLayout()
+        Me.PanelTime.ResumeLayout(False)
+        Me.PanelTime.PerformLayout()
         Me.Panel9.ResumeLayout(False)
         Me.Panel9.PerformLayout()
-        Me.Panel8.ResumeLayout(False)
-        Me.Panel8.PerformLayout()
+        Me.PanelPressure.ResumeLayout(False)
+        Me.PanelPressure.PerformLayout()
         Me.Panel17.ResumeLayout(False)
         Me.Panel17.PerformLayout()
-        Me.Panel18.ResumeLayout(False)
-        Me.Panel18.PerformLayout()
+        Me.PanelSPO.ResumeLayout(False)
+        Me.PanelSPO.PerformLayout()
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
+        Me.PanelECG.ResumeLayout(False)
+        Me.PanelECG.PerformLayout()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
-        Me.Panel16.ResumeLayout(False)
-        Me.Panel16.PerformLayout()
+        Me.PanelID.ResumeLayout(False)
+        Me.PanelID.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.Panel2.ResumeLayout(False)
@@ -1265,7 +1274,7 @@ Partial Class Dashboard
     Friend WithEvents ButtonMinEcg As Button
     Friend WithEvents ButtonPlusEcg As Button
     Friend WithEvents Label16 As Label
-    Friend WithEvents Panel6 As Panel
+    Friend WithEvents PanelECG As Panel
     Friend WithEvents Label12 As Label
     Friend WithEvents Panel5 As Panel
     Friend WithEvents LabelIDControl2 As Label
@@ -1277,12 +1286,12 @@ Partial Class Dashboard
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents Panel16 As Panel
+    Friend WithEvents PanelID As Panel
     Friend WithEvents Label28 As Label
     Friend WithEvents Panel10 As Panel
     Friend WithEvents Label23 As Label
     Friend WithEvents LabelDateDay As Label
-    Friend WithEvents Panel11 As Panel
+    Friend WithEvents PanelTime As Panel
     Friend WithEvents Label30 As Label
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Label20 As Label
@@ -1291,7 +1300,7 @@ Partial Class Dashboard
     Friend WithEvents Label24 As Label
     Friend WithEvents ButtonMinPressure As Button
     Friend WithEvents ButtonPlusPressure As Button
-    Friend WithEvents Panel8 As Panel
+    Friend WithEvents PanelPressure As Panel
     Friend WithEvents Label19 As Label
     Friend WithEvents Panel17 As Panel
     Friend WithEvents Label29 As Label
@@ -1302,7 +1311,7 @@ Partial Class Dashboard
     Friend WithEvents ButtonMin As Button
     Friend WithEvents ButtonPlus As Button
     Friend WithEvents Label35 As Label
-    Friend WithEvents Panel18 As Panel
+    Friend WithEvents PanelSPO As Panel
     Friend WithEvents Label36 As Label
     Friend WithEvents LabelTimerCompressor As Label
     Friend WithEvents Panel12 As Panel
@@ -1311,7 +1320,7 @@ Partial Class Dashboard
     Friend WithEvents ButtonFreeze As Button
     Friend WithEvents ButtonMm As Button
     Friend WithEvents ButtonStep As Button
-    Friend WithEvents Button14 As Button
+    Friend WithEvents ButtonPembanding As Button
     Friend WithEvents ButtonStandby As Button
     Friend WithEvents ButtonStop As Button
     Friend WithEvents ButtonStart As Button

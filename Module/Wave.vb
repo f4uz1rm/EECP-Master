@@ -3,12 +3,15 @@
     Dim GainSpo2b As Double
     Dim GainEcg1 As Double
     Dim GainEcg2 As Double
+    Dim GainPressure1 As Double
+    Dim GainPressure2 As Double
     Dim GainSet As Double = 5
     Dim MaxAxisXEcg As Double = 2000
     Dim MaxAxisXSpo2 As Double = 2000
-
+    Dim MaxAxisXPressure As Double = 2000
     Sub SetMaxChart()
         Dashboard.Chart1.ChartAreas(0).AxisX.Maximum = MaxAxisXEcg
+        Dashboard.Chart2.ChartAreas(0).AxisX.Maximum = MaxAxisXPressure
         Dashboard.Chart3.ChartAreas(0).AxisX.Maximum = MaxAxisXSpo2
         'Dashboard.Chart1.ChartAreas(0).AxisX.Minimum = MinAxisX
     End Sub
@@ -90,5 +93,43 @@
 
     End Sub
 
+
+    Sub LineWavePressure(y1 As Double)
+        GainPressure1 = GainPressure1 + GainSet
+        GainPressure2 = GainPressure2 + GainSet
+
+        Dashboard.Chart2.Series("pressure1").Points.AddXY(GainPressure1, (y1))
+
+        'Line 1
+        Select Case GainPressure1
+            Case MaxAxisXPressure
+                GainPressure2 = 0
+                Dashboard.Chart2.Series("pressure1").Points.RemoveAt(0)
+                Dashboard.Chart2.Series("pressure2").Points.Clear()
+                'Debug.WriteLine("SWITCH 1")
+        End Select
+
+        Select Case GainPressure1
+            Case > MaxAxisXPressure
+                Dashboard.Chart2.Series("pressure1").Points.RemoveAt(0)
+                Dashboard.Chart2.Series("pressure2").Points.AddXY(GainPressure2, (y1))
+                'Debug.WriteLine("SWITCH 2")
+        End Select
+
+        'Line 2
+        Select Case GainPressure2
+            Case MaxAxisXPressure
+                GainPressure1 = 0
+                Dashboard.Chart2.Series("pressure2").Points.RemoveAt(0)
+                Dashboard.Chart2.Series("pressure1").Points.Clear()
+                'Debug.WriteLine("SWITCH 3")
+        End Select
+        Select Case GainPressure2
+            Case > MaxAxisXPressure
+                Dashboard.Chart2.Series("pressure2").Points.RemoveAt(0)
+                'Debug.WriteLine("SWITCH 4")
+        End Select
+
+    End Sub
 
 End Module

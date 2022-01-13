@@ -25,21 +25,21 @@ Partial Class Patient_Information
         Me.PanelTop = New System.Windows.Forms.Panel()
         Me.ButtonClose = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBoxName = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.ComboBoxSex = New System.Windows.Forms.ComboBox()
+        Me.TextBoxAge = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TextBoxAddress = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextBoxTel = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.TextBoxEmail = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -92,13 +92,13 @@ Partial Class Patient_Information
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "PATIENT INFORMATION"
         '
-        'TextBox2
+        'TextBoxName
         '
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox2.Location = New System.Drawing.Point(115, 129)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox2.TabIndex = 27
+        Me.TextBoxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxName.Location = New System.Drawing.Point(115, 129)
+        Me.TextBoxName.Name = "TextBoxName"
+        Me.TextBoxName.Size = New System.Drawing.Size(157, 20)
+        Me.TextBoxName.TabIndex = 27
         '
         'TextBox1
         '
@@ -144,22 +144,22 @@ Partial Class Patient_Information
         Me.Label14.TabIndex = 23
         Me.Label14.Text = "ID PATIENT"
         '
-        'ComboBox1
+        'ComboBoxSex
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"MALE", "FEMALE"})
-        Me.ComboBox1.Location = New System.Drawing.Point(115, 178)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(157, 21)
-        Me.ComboBox1.TabIndex = 31
+        Me.ComboBoxSex.FormattingEnabled = True
+        Me.ComboBoxSex.Items.AddRange(New Object() {"MALE", "FEMALE"})
+        Me.ComboBoxSex.Location = New System.Drawing.Point(115, 178)
+        Me.ComboBoxSex.Name = "ComboBoxSex"
+        Me.ComboBoxSex.Size = New System.Drawing.Size(157, 21)
+        Me.ComboBoxSex.TabIndex = 31
         '
-        'TextBox3
+        'TextBoxAge
         '
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox3.Location = New System.Drawing.Point(115, 227)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox3.TabIndex = 33
+        Me.TextBoxAge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxAge.Location = New System.Drawing.Point(115, 227)
+        Me.TextBoxAge.Name = "TextBoxAge"
+        Me.TextBoxAge.Size = New System.Drawing.Size(157, 20)
+        Me.TextBoxAge.TabIndex = 33
         '
         'Label4
         '
@@ -192,13 +192,13 @@ Partial Class Patient_Information
         Me.Label5.TabIndex = 35
         Me.Label5.Text = "DIAGNOSE"
         '
-        'TextBox5
+        'TextBoxAddress
         '
-        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox5.Location = New System.Drawing.Point(115, 284)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox5.TabIndex = 37
+        Me.TextBoxAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxAddress.Location = New System.Drawing.Point(115, 284)
+        Me.TextBoxAddress.Name = "TextBoxAddress"
+        Me.TextBoxAddress.Size = New System.Drawing.Size(157, 20)
+        Me.TextBoxAddress.TabIndex = 37
         '
         'Label6
         '
@@ -211,13 +211,13 @@ Partial Class Patient_Information
         Me.Label6.TabIndex = 36
         Me.Label6.Text = "ADDRESS"
         '
-        'TextBox6
+        'TextBoxTel
         '
-        Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox6.Location = New System.Drawing.Point(115, 340)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox6.TabIndex = 39
+        Me.TextBoxTel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxTel.Location = New System.Drawing.Point(115, 340)
+        Me.TextBoxTel.Name = "TextBoxTel"
+        Me.TextBoxTel.Size = New System.Drawing.Size(157, 20)
+        Me.TextBoxTel.TabIndex = 39
         '
         'Label7
         '
@@ -230,13 +230,13 @@ Partial Class Patient_Information
         Me.Label7.TabIndex = 38
         Me.Label7.Text = "TEL"
         '
-        'TextBox7
+        'TextBoxEmail
         '
-        Me.TextBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox7.Location = New System.Drawing.Point(115, 396)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox7.TabIndex = 41
+        Me.TextBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxEmail.Location = New System.Drawing.Point(115, 396)
+        Me.TextBoxEmail.Name = "TextBoxEmail"
+        Me.TextBoxEmail.Size = New System.Drawing.Size(157, 20)
+        Me.TextBoxEmail.TabIndex = 41
         '
         'Label8
         '
@@ -403,19 +403,19 @@ Partial Class Patient_Information
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.TextBox7)
+        Me.Controls.Add(Me.TextBoxEmail)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.TextBox6)
+        Me.Controls.Add(Me.TextBoxTel)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.TextBox5)
+        Me.Controls.Add(Me.TextBoxAddress)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.TextBoxAge)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.ComboBoxSex)
         Me.Controls.Add(Me.PanelTop)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.TextBoxName)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -436,21 +436,21 @@ Partial Class Patient_Information
     Friend WithEvents PanelTop As Panel
     Friend WithEvents ButtonClose As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBoxName As TextBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label14 As Label
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents ComboBoxSex As ComboBox
+    Friend WithEvents TextBoxAge As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents TextBoxAddress As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TextBoxTel As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents TextBoxEmail As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents Button4 As Button

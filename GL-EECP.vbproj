@@ -80,17 +80,15 @@
     <Compile Include="Dashboard.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Database\Connection-Access.vb" />
     <Compile Include="Demo.Designer.vb">
       <DependentUpon>Demo.vb</DependentUpon>
     </Compile>
     <Compile Include="Demo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GLEECPDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GLEECPDataSet.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="Module\Data-Patient.vb" />
+    <Compile Include="Module\SendData.vb" />
     <Compile Include="Module\TimerWatch.vb" />
     <Compile Include="Module\Wave.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -153,17 +151,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="GLEECPDataSet.xsc">
-      <DependentUpon>GLEECPDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="GLEECPDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GLEECPDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GLEECPDataSet.xss">
-      <DependentUpon>GLEECPDataSet.xsd</DependentUpon>
-    </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -177,11 +164,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="GLEECP.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

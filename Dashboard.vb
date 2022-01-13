@@ -23,7 +23,8 @@
 
     Public MinuteValue As Integer = 60
     Private Sub ButtonStart_Click(sender As Object, e As EventArgs) Handles ButtonStart.Click
-        com1.WriteLine("w")
+        SendDataSerialPort("w")
+        TimerRevers.Enabled = True
     End Sub
 
     Private Sub ButtonPatient_Click(sender As Object, e As EventArgs) Handles ButtonPatient.Click
@@ -67,7 +68,7 @@
         End If
         LabelAmpSpo.Text = "AMP X" & AmpSpo2
     End Sub
-    Dim IDControl1 As Integer = 184
+    Public IDControl1 As Integer = 184
     Private Sub ButtonIDPlus1_Click(sender As Object, e As EventArgs) Handles ButtonIDPlus1.Click
         If IDControl1 >= 100000 Then
             IDControl1 = 100000
@@ -89,7 +90,7 @@
 
     End Sub
 
-    Dim IDControl2 As Integer = 536
+    Public IDControl2 As Integer = 536
     Private Sub ButtonIDPlus2_Click(sender As Object, e As EventArgs) Handles ButtonIDPlus2.Click
         If IDControl2 >= 100000 Then
             IDControl2 = 100000
@@ -133,10 +134,12 @@
             Case False
                 ButtonStep.Text = " 2 STEP "
                 btnStep = True
+                SendDataSerialPort("m")
 
             Case True
                 ButtonStep.Text = " 3 STEP "
                 btnStep = False
+                SendDataSerialPort("n")
 
         End Select
 
@@ -151,7 +154,6 @@
             Case True
                 ButtonMm.Text = " 25 mm/s "
                 btnMm = False
-
         End Select
     End Sub
 
@@ -170,8 +172,10 @@
     End Sub
 
     Private Sub ButtonStop_Click(sender As Object, e As EventArgs) Handles ButtonStop.Click
-        com1.WriteLine("e")
+        SendDataSerialPort("e")
         LabelType.Text = " TYPE : ADULT "
+        TimerRevers.Enabled = False
+
     End Sub
     Dim BtnFreeze As Boolean = False
     Private Sub ButtonFreeze_Click(sender As Object, e As EventArgs) Handles ButtonFreeze.Click
@@ -180,24 +184,28 @@
                 ButtonFreeze.Text = " CONTINUE "
                 BtnFreeze = True
                 TimerReal.Enabled = False
+                TimerReceived.Enabled = False
 
             Case True
                 ButtonFreeze.Text = " FREEZE "
                 BtnFreeze = False
                 TimerReal.Enabled = True
+                TimerReceived.Enabled = True
+
         End Select
     End Sub
     Sub ViewPort()
-        ' Declare Ports 
+        ' Mendeklarasikan Port
         Dim Ports As String() = IO.Ports.SerialPort.GetPortNames()
-        ' Add port name Into a comboBox control 
+        ' Menambah item port pada Combo box
         For Each Port In Ports
             ComboBoxPort.Items.Add(Port)
         Next Port
-        ' Select an item in the combobox
+        ' Memilih item pada Combo box
         ComboBoxPort.SelectedIndex = 0
     End Sub
     Sub COM5Connecting()
+        'Ini untuk koneksi dari VB ke Alat menggunakan Serial Port
         Try
             com1 = My.Computer.Ports.OpenSerialPort(ComboBoxPort.SelectedItem)
             com1.BaudRate = 115200
@@ -213,7 +221,9 @@
 
     Private Sub ButtonConnect_Click(sender As Object, e As EventArgs) Handles ButtonConnect.Click
         COM5Connecting()
+        ButtonConnect.Enabled = False
         ButtonActive()
+
     End Sub
 
     Private Sub ButtonDisconnect_Click(sender As Object, e As EventArgs) Handles ButtonDisconnect.Click
@@ -222,19 +232,35 @@
         TimerSend.Enabled = False
         LabelPort.Text = "DISCONNECT"
         LabelPort.ForeColor = Color.Red
+        ButtonConnect.Enabled = True
         ButtonDisable()
     End Sub
     Dim RCData As String
     Dim Bprm As Double
     Sub ButtonActive()
+        ButtonDisconnect.Enabled = True
         ButtonStart.Enabled = True
         ButtonStop.Enabled = True
+        ButtonStandby.Enabled = True
+        ButtonPembanding.Enabled = True
+        ButtonMm.Enabled = True
+        ButtonFreeze.Enabled = True
+        ButtonStep.Enabled = True
+        ButtonSave.Enabled = True
+        ButtonPatient.Enabled = True
+
     End Sub
-
-
     Sub ButtonDisable()
+        ButtonDisconnect.Enabled = False
         ButtonStart.Enabled = False
         ButtonStop.Enabled = False
+        ButtonStandby.Enabled = False
+        ButtonPembanding.Enabled = False
+        ButtonMm.Enabled = False
+        ButtonFreeze.Enabled = False
+        ButtonStep.Enabled = False
+        ButtonSave.Enabled = False
+        ButtonPatient.Enabled = False
     End Sub
 
 End Class
