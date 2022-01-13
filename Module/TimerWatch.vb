@@ -9,16 +9,16 @@
         TimerReal.Enabled = True
         TimerReal.Interval = 1
         'Timer Received di gunakan untuk menerima data
-        TimerReceived.Interval = 35
+        TimerReceived.Interval = 32
         'Timer Send untuk sementara di gunakan untuk mengirim data start dan stop 
         TimerSend.Interval = 100
         'Timer Revers untuk menghitung mundur pada button start
         TimerRevers.Interval = 100
     End Sub
     Public Sub TimerReceived_Tick(sender As Object, e As System.EventArgs) Handles TimerReceived.Tick
-        Dim HB As Double
-        Dim ReceivedData As String = Dashboard.com1.ReadLine() '
-        Dim testArray() As String = ReceivedData.Split(New String() {";"}, StringSplitOptions.None)
+        Dim HB As Double 'HB = HeartBeat
+        Dim ReceivedData As String = Dashboard.com1.ReadLine() 'Menerima Data dari Serial Port
+        Dim testArray() As String = ReceivedData.Split(New String() {";"}, StringSplitOptions.None) 'Split untuk memisahkan data 
         For Each s As String In testArray
             HB = testArray(1)
             LineWaveSpo2(testArray(0))
@@ -33,7 +33,7 @@
         Next
     End Sub
     Public Sub TimerSend_Tick(sender As Object, e As System.EventArgs) Handles TimerSend.Tick
-        SendDataSerialPort("q")
+        SendDataSerialPort("q") ' katakter q = perintah untuk menyalakan lampu pada alat
     End Sub
 
     Private Sub TimerReal_Tick(sender As Object, e As EventArgs) Handles TimerReal.Tick
