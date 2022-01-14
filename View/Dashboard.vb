@@ -23,8 +23,7 @@
 
     Public MinuteValue As Integer = 60
     Private Sub ButtonStart_Click(sender As Object, e As EventArgs) Handles ButtonStart.Click
-        SendDataSerialPort("w")
-        TimerRevers.Enabled = True
+        Patient.Show()
     End Sub
 
     Private Sub ButtonPatient_Click(sender As Object, e As EventArgs) Handles ButtonPatient.Click
@@ -59,7 +58,6 @@
         End If
         LabelAmpSpo.Text = "AMP X" & AmpSpo2
     End Sub
-
     Private Sub ButtonMin_Click(sender As Object, e As EventArgs) Handles ButtonMin.Click
         If AmpSpo2 <= 1 Then
             AmpSpo2 = 1
@@ -89,7 +87,6 @@
         com1.Write(IDControl1)
 
     End Sub
-
     Public IDControl2 As Integer = 536
     Private Sub ButtonIDPlus2_Click(sender As Object, e As EventArgs) Handles ButtonIDPlus2.Click
         If IDControl2 >= 100000 Then
@@ -100,7 +97,6 @@
         LabelIDControl2.Text = "R - D " & IDControl2
         com1.Write(IDControl2)
     End Sub
-
     Private Sub ButtonIDMin2_Click(sender As Object, e As EventArgs) Handles ButtonIDMin2.Click
         If IDControl2 <= 8 Then
             IDControl2 = 8
@@ -110,7 +106,6 @@
         LabelIDControl2.Text = "R - D " & IDControl2
         com1.Write(IDControl2)
     End Sub
-
     Dim Pressure As Integer = 80
     Private Sub ButtonPlusPressure_Click(sender As Object, e As EventArgs) Handles ButtonPlusPressure.Click
         If Pressure >= 100000 Then
@@ -170,7 +165,6 @@
 
         End Select
     End Sub
-
     Private Sub ButtonStop_Click(sender As Object, e As EventArgs) Handles ButtonStop.Click
         SendDataSerialPort("e")
         LabelType.Text = " TYPE : ADULT "
@@ -223,7 +217,6 @@
         COM5Connecting()
         ButtonConnect.Enabled = False
         ButtonActive()
-
     End Sub
 
     Private Sub ButtonDisconnect_Click(sender As Object, e As EventArgs) Handles ButtonDisconnect.Click

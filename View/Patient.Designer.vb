@@ -30,10 +30,12 @@ Partial Class Patient
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBoxTime = New System.Windows.Forms.TextBox()
         Me.ButtonStart = New System.Windows.Forms.Button()
         Me.ButtonClose = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.ButtonPlus = New System.Windows.Forms.Button()
+        Me.ButtonMin = New System.Windows.Forms.Button()
         Me.PanelTop.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -124,17 +126,18 @@ Partial Class Patient
         Me.TextBox2.Size = New System.Drawing.Size(304, 30)
         Me.TextBox2.TabIndex = 18
         '
-        'TextBox3
+        'TextBoxTime
         '
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(174, 198)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.TextBox3.Size = New System.Drawing.Size(99, 30)
-        Me.TextBox3.TabIndex = 19
-        Me.TextBox3.Text = "60"
+        Me.TextBoxTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxTime.Location = New System.Drawing.Point(215, 200)
+        Me.TextBoxTime.Multiline = True
+        Me.TextBoxTime.Name = "TextBoxTime"
+        Me.TextBoxTime.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.TextBoxTime.Size = New System.Drawing.Size(81, 30)
+        Me.TextBoxTime.TabIndex = 19
+        Me.TextBoxTime.Text = "60"
+        Me.TextBoxTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ButtonStart
         '
@@ -161,21 +164,41 @@ Partial Class Patient
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(296, 209)
+        Me.Label4.Location = New System.Drawing.Point(358, 208)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(55, 13)
         Me.Label4.TabIndex = 22
         Me.Label4.Text = "MINUTE"
+        '
+        'ButtonPlus
+        '
+        Me.ButtonPlus.Location = New System.Drawing.Point(304, 198)
+        Me.ButtonPlus.Name = "ButtonPlus"
+        Me.ButtonPlus.Size = New System.Drawing.Size(32, 32)
+        Me.ButtonPlus.TabIndex = 23
+        Me.ButtonPlus.Text = "+"
+        Me.ButtonPlus.UseVisualStyleBackColor = True
+        '
+        'ButtonMin
+        '
+        Me.ButtonMin.Location = New System.Drawing.Point(174, 198)
+        Me.ButtonMin.Name = "ButtonMin"
+        Me.ButtonMin.Size = New System.Drawing.Size(32, 32)
+        Me.ButtonMin.TabIndex = 24
+        Me.ButtonMin.Text = "-"
+        Me.ButtonMin.UseVisualStyleBackColor = True
         '
         'Patient
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(520, 346)
+        Me.Controls.Add(Me.ButtonMin)
+        Me.Controls.Add(Me.ButtonPlus)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.ButtonClose)
         Me.Controls.Add(Me.ButtonStart)
-        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.TextBoxTime)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label3)
@@ -201,8 +224,10 @@ Partial Class Patient
     Friend WithEvents Label3 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBoxTime As TextBox
     Friend WithEvents ButtonStart As Button
     Friend WithEvents ButtonClose As Button
     Friend WithEvents Label4 As Label
+    Friend WithEvents ButtonPlus As Button
+    Friend WithEvents ButtonMin As Button
 End Class

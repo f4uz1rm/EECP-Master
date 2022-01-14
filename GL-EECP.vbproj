@@ -13,6 +13,21 @@
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -49,6 +64,9 @@
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -74,20 +92,21 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dashboard.Designer.vb">
+    <Compile Include="View\Dashboard.Designer.vb">
       <DependentUpon>Dashboard.vb</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard.vb">
+    <Compile Include="View\Dashboard.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Database\Connection-Access.vb" />
-    <Compile Include="Demo.Designer.vb">
+    <Compile Include="View\Demo.Designer.vb">
       <DependentUpon>Demo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Demo.vb">
+    <Compile Include="View\Demo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module\Data-Patient.vb" />
+    <Compile Include="Module\Reboot.vb" />
     <Compile Include="Module\SendData.vb" />
     <Compile Include="Module\TimerWatch.vb" />
     <Compile Include="Module\Wave.vb" />
@@ -107,30 +126,24 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Patient-Information.Designer.vb">
+    <Compile Include="View\Patient-Information.Designer.vb">
       <DependentUpon>Patient-Information.vb</DependentUpon>
     </Compile>
-    <Compile Include="Patient-Information.vb">
+    <Compile Include="View\Patient-Information.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Patient.Designer.vb">
+    <Compile Include="View\Patient.Designer.vb">
       <DependentUpon>Patient.vb</DependentUpon>
     </Compile>
-    <Compile Include="Patient.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReceivedData.Designer.vb">
-      <DependentUpon>ReceivedData.vb</DependentUpon>
-    </Compile>
-    <Compile Include="ReceivedData.vb">
+    <Compile Include="View\Patient.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Dashboard.resx">
+    <EmbeddedResource Include="View\Dashboard.resx">
       <DependentUpon>Dashboard.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Demo.resx">
+    <EmbeddedResource Include="View\Demo.resx">
       <DependentUpon>Demo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -139,14 +152,11 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Patient-Information.resx">
+    <EmbeddedResource Include="View\Patient-Information.resx">
       <DependentUpon>Patient-Information.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Patient.resx">
+    <EmbeddedResource Include="View\Patient.resx">
       <DependentUpon>Patient.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReceivedData.resx">
-      <DependentUpon>ReceivedData.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -164,6 +174,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
