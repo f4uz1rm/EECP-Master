@@ -4,6 +4,7 @@
         Me.Close()
     End Sub
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FormLoad()
         SetMaxChart()
         ViewPort()
         SetTimer()
@@ -15,10 +16,15 @@
         End If
         Pos = Control.MousePosition
     End Sub
-
-
+    Public DemoStatus As Boolean = False
     Private Sub ButtonDemo_Click(sender As Object, e As EventArgs) Handles ButtonDemo.Click
-        Demo.Show()
+        If DemoStatus = True Then
+            DemoStatus = False
+            TimerDemo.Enabled = False
+            ButtonDemo.Text = "DEMO"
+        Else
+            Demo.Show()
+        End If
     End Sub
 
     Public MinuteValue As Integer = 60
@@ -106,12 +112,13 @@
         LabelIDControl2.Text = "R - D " & IDControl2
         com1.Write(IDControl2)
     End Sub
-    Dim Pressure As Integer = 80
+    Public Pressure As Integer = 80
     Private Sub ButtonPlusPressure_Click(sender As Object, e As EventArgs) Handles ButtonPlusPressure.Click
         If Pressure >= 100000 Then
             Pressure = 100000
         Else
             Pressure = Pressure + 1
+            SendDataSerialPort("-")
         End If
         LabelPressure.Text = Pressure
     End Sub
@@ -120,6 +127,7 @@
             Pressure = 1
         Else
             Pressure = Pressure - 1
+            SendDataSerialPort("-")
         End If
         LabelPressure.Text = Pressure
     End Sub
@@ -129,12 +137,12 @@
             Case False
                 ButtonStep.Text = " 2 STEP "
                 btnStep = True
-                SendDataSerialPort("m")
+                SendDataSerialPort("2step")
 
             Case True
                 ButtonStep.Text = " 3 STEP "
                 btnStep = False
-                SendDataSerialPort("n")
+                SendDataSerialPort("3step")
 
         End Select
 
@@ -153,17 +161,8 @@
     End Sub
 
     Dim btnStndby As Boolean = False
-    Private Sub ButtonStandby_Click(sender As Object, e As EventArgs) Handles ButtonStandby.Click
-        Select Case btnStndby
-            Case False
-                ButtonStandby.Text = " COME BACK "
-                btnStndby = True
-
-            Case True
-                ButtonStandby.Text = " PAUSE "
-                btnStndby = False
-
-        End Select
+    Private Sub ButtonStandby_Click(sender As Object, e As EventArgs) Handles ButtonExit.Click
+        Me.Close()
     End Sub
     Private Sub ButtonStop_Click(sender As Object, e As EventArgs) Handles ButtonStop.Click
         SendDataSerialPort("e")
@@ -234,26 +233,64 @@
         ButtonDisconnect.Enabled = True
         ButtonStart.Enabled = True
         ButtonStop.Enabled = True
-        ButtonStandby.Enabled = True
+        ButtonExit.Enabled = True
         ButtonPembanding.Enabled = True
         ButtonMm.Enabled = True
         ButtonFreeze.Enabled = True
         ButtonStep.Enabled = True
         ButtonSave.Enabled = True
         ButtonPatient.Enabled = True
+        ButtonDemo.Enabled = False
 
     End Sub
     Sub ButtonDisable()
         ButtonDisconnect.Enabled = False
         ButtonStart.Enabled = False
         ButtonStop.Enabled = False
-        ButtonStandby.Enabled = False
+        ButtonExit.Enabled = True
         ButtonPembanding.Enabled = False
         ButtonMm.Enabled = False
         ButtonFreeze.Enabled = False
         ButtonStep.Enabled = False
         ButtonSave.Enabled = False
         ButtonPatient.Enabled = False
+        ButtonDemo.Enabled = True
+    End Sub
+    Dim WindowsState As Boolean = True
+    Private Sub PanelTop_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles PanelTop.MouseDoubleClick
+        Me.WindowState = FormWindowState.Maximized
     End Sub
 
+    Private Sub PanelID_Click(sender As Object, e As EventArgs) Handles PanelID.Click
+        PanelSideVisible()
+        PanelIDControl.Visible = True
+    End Sub
+
+    Private Sub PanelECG_Click(sender As Object, e As EventArgs) Handles PanelECG.Click
+        PanelSideVisible()
+        PanelECGControl.Visible = True
+    End Sub
+
+    Private Sub PanelSPO_Click(sender As Object, e As EventArgs) Handles PanelSPO.Click
+        PanelSideVisible()
+        PanelSPO2Control.Visible = True
+    End Sub
+
+    Private Sub PanelPressure_Click(sender As Object, e As EventArgs) Handles PanelPressure.Click
+        PanelSideVisible()
+        PanelPreassureControl.Visible = True
+    End Sub
+
+    Private Sub PanelTime_Click(sender As Object, e As EventArgs) Handles PanelTime.Click
+        PanelSideVisible()
+        PanelTimeControl.Visible = True
+    End Sub
+    Sub PanelSideVisible()
+        PanelIDControl.Visible = False
+        PanelECGControl.Visible = False
+        PanelSPO2Control.Visible = False
+        PanelPreassureControl.Visible = False
+        PanelTimeControl.Visible = False
+    End Sub
 End Class
+'Untuk yang melanjutkan EECP, Semangat yaa aplikasi sedikit lagi beres

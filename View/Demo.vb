@@ -5,7 +5,9 @@
     Private Sub ButtonStart_Click(sender As Object, e As EventArgs) Handles ButtonStart.Click
         If TextBoxPassword.Text = "1234" Then
             Dashboard.LabelType.Text = " TYPE : DEMO "
-            LineWaveECG(Rnd)
+            TimerDemo.Enabled = True
+            Dashboard.ButtonDemo.Text = "STOP DEMO"
+            Dashboard.DemoStatus = True
             Me.Close()
         Else
             MsgBox("Password Salah", MsgBoxStyle.Information)

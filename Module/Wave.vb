@@ -9,7 +9,7 @@
     Dim GainPressure1 As Double
     Dim GainPressure2 As Double
     'Gain Set
-    Dim GainSet As Double = 5
+    Dim GainSet As Double = 2
     'Set Max 
     Dim MaxAxisXEcg As Double = 2000
     Dim MaxAxisXSpo2 As Double = 2000

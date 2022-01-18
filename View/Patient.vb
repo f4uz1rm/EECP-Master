@@ -7,7 +7,7 @@
         SendDataSerialPort("w")
         TimerRevers.Enabled = True
         Seconds = TextBoxTime.Text
-        Dashboard.ButtonStandby.Text = "PAUSE"
+        Dashboard.ButtonExit.Text = "PAUSE"
         Me.Close()
     End Sub
     Dim Pos As Point
