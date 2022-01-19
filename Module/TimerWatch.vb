@@ -150,6 +150,7 @@ Module TimerWatch
             TimerRevers.Enabled = False
             Seconds = 60
             SendDataSerialPort("e")
+            Dashboard.ButtonStop.PerformClick()
         Else
             Seconds = Seconds - 1
             Dashboard.ButtonStart.Text = Seconds

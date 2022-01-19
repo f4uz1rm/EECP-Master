@@ -1,4 +1,6 @@
-﻿Public Class Dashboard
+﻿Imports System.ComponentModel
+
+Public Class Dashboard
     Public com1 As IO.Ports.SerialPort = Nothing
     Private Sub Button_Exit_Click(sender As Object, e As EventArgs) Handles Button_Exit.Click
         Me.Close()
@@ -162,10 +164,12 @@
 
     Dim btnStndby As Boolean = False
     Private Sub ButtonStandby_Click(sender As Object, e As EventArgs) Handles ButtonExit.Click
+        ButtonStop.PerformClick()
         Me.Close()
     End Sub
     Private Sub ButtonStop_Click(sender As Object, e As EventArgs) Handles ButtonStop.Click
         SendDataSerialPort("e")
+        SendDataSerialPort("stop")
         LabelType.Text = " TYPE : ADULT "
         TimerRevers.Enabled = False
 
@@ -233,7 +237,7 @@
         ButtonDisconnect.Enabled = True
         ButtonStart.Enabled = True
         ButtonStop.Enabled = True
-        ButtonExit.Enabled = True
+        ButtonExit.Enabled = False
         ButtonPembanding.Enabled = True
         ButtonMm.Enabled = True
         ButtonFreeze.Enabled = True
@@ -291,6 +295,14 @@
         PanelSPO2Control.Visible = False
         PanelPreassureControl.Visible = False
         PanelTimeControl.Visible = False
+    End Sub
+
+    Private Sub ButtonToMobile_Click(sender As Object, e As EventArgs) Handles ButtonToMobile.Click
+        QrCode.Show()
+    End Sub
+
+    Private Sub Dashboard_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        ButtonExit.PerformClick()
     End Sub
 End Class
 'Untuk yang melanjutkan EECP, Semangat yaa aplikasi sedikit lagi beres

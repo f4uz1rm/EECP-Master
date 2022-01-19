@@ -5,9 +5,9 @@
 
     Private Sub ButtonStart_Click(sender As Object, e As EventArgs) Handles ButtonStart.Click
         SendDataSerialPort("w")
+        SendDataSerialPort("start")
         TimerRevers.Enabled = True
         Seconds = TextBoxTime.Text
-        Dashboard.ButtonExit.Text = "PAUSE"
         Me.Close()
     End Sub
     Dim Pos As Point
