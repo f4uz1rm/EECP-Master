@@ -11,9 +11,9 @@
     'Gain Set
     Dim GainSet As Double = 2
     'Set Max 
-    Dim MaxAxisXEcg As Double = 2000
-    Dim MaxAxisXSpo2 As Double = 2000
-    Dim MaxAxisXPressure As Double = 2000
+    Dim MaxAxisXEcg As Double = 500
+    Dim MaxAxisXSpo2 As Double = 500 ' Optimal 2000
+    Dim MaxAxisXPressure As Double = 500
     Sub SetMaxChart()
         Dashboard.Chart1.ChartAreas(0).AxisX.Maximum = MaxAxisXEcg
         Dashboard.Chart2.ChartAreas(0).AxisX.Maximum = MaxAxisXPressure

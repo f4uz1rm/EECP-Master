@@ -77,14 +77,16 @@ Module TimerWatch
         Dim ReceivedData As String = Dashboard.com1.ReadLine() 'Menerima data dari Serial Port ( Jika menggunakan .Readline = Otomatis Enter pada saat penerimaan data
         Dashboard.com1.DiscardInBuffer()
         Dim testArray() As String = ReceivedData.Split(New String() {";"}, StringSplitOptions.None) 'Split untuk memisahkan data 
+
         For Each s As String In testArray
+            'Mengatasi Lag 
+            Dashboard.Refresh()
             'Untuk Menampilkan di Label
             Dashboard.LabelWaveSpo2.Text = "Spo Wave : " & vbCrLf & testArray(0)
             Dashboard.LabelHB.Text = "HB : " & vbCrLf & testArray(1)
             Dashboard.LabelECG.Text = "ECG Wave " & vbCrLf & testArray(2)
             Dashboard.LabelMmhg.Text = testArray(3)
             Dashboard.LabelPreassure.Text = "Preassure : " & vbCrLf & testArray(4)
-
             'HB
             HB = testArray(1)
             If HB = 0 Then
@@ -93,6 +95,7 @@ Module TimerWatch
                 TimerSend.Enabled = True
                 TimerSend.Interval = 60 * 1000 / HB
             End If
+
             'Line Wave Spo2
             LineWaveSpo2(testArray(0))
 
@@ -105,6 +108,7 @@ Module TimerWatch
 
             'Line STEP WAVE
             LineWavePressure(testArray(4))
+
             'STEP
             If testArray(4) = 50 Then
                 Dashboard.Panel_I1.BackColor = ColorID
@@ -126,16 +130,14 @@ Module TimerWatch
     Public Sub TimerSend_Tick(sender As Object, e As System.EventArgs) Handles TimerSend.Tick
         SendDataSerialPort("-") ' katakter q = perintah untuk menyalakan lampu pada alat
     End Sub
-
     Private Sub TimerReal_Tick(sender As Object, e As EventArgs) Handles TimerReal.Tick
         Dashboard.LabelDateDay.Text = Today
         Dashboard.LabelTime.Text = TimeOfDay
-
         'SPO2
         If TimerReceived.Enabled = False Then
-            LineWaveSpo2(1000)
-            LineWaveECG(1000)
-            LineWavePressure(100) ' Memanggil Fungsi LineWace pada Modul Wave
+            LineWaveSpo2(500)
+            LineWaveECG(500)
+            LineWavePressure(500) ' Memanggil Fungsi LineWace pada Modul Wave
 
             'Memanggil Fungsi LineWave pada Modul Wave
             'LineWavePressure(50) ' Memanggil Fungsi LineWace pada Modul Wave
