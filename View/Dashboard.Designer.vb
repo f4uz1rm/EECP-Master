@@ -97,14 +97,20 @@ Partial Class Dashboard
         Me.LabelType = New System.Windows.Forms.Label()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LabelECG = New System.Windows.Forms.Label()
-        Me.Panel14 = New System.Windows.Forms.Panel()
-        Me.LabelPreassure = New System.Windows.Forms.Label()
-        Me.Chart2 = New System.Windows.Forms.DataVisualization.Charting.Chart()
-        Me.Panel15 = New System.Windows.Forms.Panel()
-        Me.LabelWaveSpo2 = New System.Windows.Forms.Label()
         Me.LabelHB = New System.Windows.Forms.Label()
+        Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Chart2 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.LabelPreassure = New System.Windows.Forms.Label()
+        Me.Panel15 = New System.Windows.Forms.Panel()
+        Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Chart3 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.LabelWaveSpo2 = New System.Windows.Forms.Label()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.ButtonDemo = New System.Windows.Forms.Button()
         Me.ButtonPatient = New System.Windows.Forms.Button()
@@ -122,12 +128,6 @@ Partial Class Dashboard
         Me.ButtonConnect = New System.Windows.Forms.Button()
         Me.ComboBoxPort = New System.Windows.Forms.ComboBox()
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.Panel9 = New System.Windows.Forms.Panel()
         Me.PanelLeft.SuspendLayout()
         Me.PanelTimeControl.SuspendLayout()
         Me.PanelTime.SuspendLayout()
@@ -144,18 +144,18 @@ Partial Class Dashboard
         Me.PanelTop.SuspendLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel13.SuspendLayout()
+        Me.Panel9.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.Panel14.SuspendLayout()
+        Me.Panel8.SuspendLayout()
         CType(Me.Chart2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel5.SuspendLayout()
         Me.Panel15.SuspendLayout()
+        Me.Panel7.SuspendLayout()
         CType(Me.Chart3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel6.SuspendLayout()
         Me.Panel12.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.Panel5.SuspendLayout()
-        Me.Panel6.SuspendLayout()
-        Me.Panel7.SuspendLayout()
-        Me.Panel8.SuspendLayout()
-        Me.Panel9.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelLeft
@@ -918,6 +918,25 @@ Partial Class Dashboard
         Me.Panel13.Size = New System.Drawing.Size(791, 204)
         Me.Panel13.TabIndex = 73
         '
+        'Panel9
+        '
+        Me.Panel9.Controls.Add(Me.Chart1)
+        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel9.Location = New System.Drawing.Point(111, 0)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(680, 204)
+        Me.Panel9.TabIndex = 81
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.LabelECG)
+        Me.Panel1.Controls.Add(Me.LabelHB)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(111, 204)
+        Me.Panel1.TabIndex = 80
+        '
         'LabelECG
         '
         Me.LabelECG.AutoSize = True
@@ -929,6 +948,17 @@ Partial Class Dashboard
         Me.LabelECG.TabIndex = 78
         Me.LabelECG.Text = "ECG"
         '
+        'LabelHB
+        '
+        Me.LabelHB.AutoSize = True
+        Me.LabelHB.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelHB.ForeColor = System.Drawing.Color.LimeGreen
+        Me.LabelHB.Location = New System.Drawing.Point(22, 88)
+        Me.LabelHB.Name = "LabelHB"
+        Me.LabelHB.Size = New System.Drawing.Size(34, 20)
+        Me.LabelHB.TabIndex = 76
+        Me.LabelHB.Text = "HB"
+        '
         'Panel14
         '
         Me.Panel14.Controls.Add(Me.Panel8)
@@ -939,16 +969,14 @@ Partial Class Dashboard
         Me.Panel14.Size = New System.Drawing.Size(791, 214)
         Me.Panel14.TabIndex = 74
         '
-        'LabelPreassure
+        'Panel8
         '
-        Me.LabelPreassure.AutoSize = True
-        Me.LabelPreassure.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelPreassure.ForeColor = System.Drawing.Color.LimeGreen
-        Me.LabelPreassure.Location = New System.Drawing.Point(21, 16)
-        Me.LabelPreassure.Name = "LabelPreassure"
-        Me.LabelPreassure.Size = New System.Drawing.Size(90, 20)
-        Me.LabelPreassure.TabIndex = 79
-        Me.LabelPreassure.Text = "Preassure"
+        Me.Panel8.Controls.Add(Me.Chart2)
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel8.Location = New System.Drawing.Point(111, 0)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(680, 214)
+        Me.Panel8.TabIndex = 81
         '
         'Chart2
         '
@@ -986,6 +1014,26 @@ Partial Class Dashboard
         Me.Chart2.TabIndex = 68
         Me.Chart2.Text = "Chart1"
         '
+        'Panel5
+        '
+        Me.Panel5.Controls.Add(Me.LabelPreassure)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel5.Location = New System.Drawing.Point(0, 0)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(111, 214)
+        Me.Panel5.TabIndex = 80
+        '
+        'LabelPreassure
+        '
+        Me.LabelPreassure.AutoSize = True
+        Me.LabelPreassure.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelPreassure.ForeColor = System.Drawing.Color.LimeGreen
+        Me.LabelPreassure.Location = New System.Drawing.Point(21, 16)
+        Me.LabelPreassure.Name = "LabelPreassure"
+        Me.LabelPreassure.Size = New System.Drawing.Size(90, 20)
+        Me.LabelPreassure.TabIndex = 79
+        Me.LabelPreassure.Text = "Preassure"
+        '
         'Panel15
         '
         Me.Panel15.Controls.Add(Me.Panel7)
@@ -996,27 +1044,14 @@ Partial Class Dashboard
         Me.Panel15.Size = New System.Drawing.Size(791, 200)
         Me.Panel15.TabIndex = 75
         '
-        'LabelWaveSpo2
+        'Panel7
         '
-        Me.LabelWaveSpo2.AutoSize = True
-        Me.LabelWaveSpo2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelWaveSpo2.ForeColor = System.Drawing.Color.LimeGreen
-        Me.LabelWaveSpo2.Location = New System.Drawing.Point(21, 17)
-        Me.LabelWaveSpo2.Name = "LabelWaveSpo2"
-        Me.LabelWaveSpo2.Size = New System.Drawing.Size(78, 20)
-        Me.LabelWaveSpo2.TabIndex = 77
-        Me.LabelWaveSpo2.Text = "Wave : 0"
-        '
-        'LabelHB
-        '
-        Me.LabelHB.AutoSize = True
-        Me.LabelHB.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelHB.ForeColor = System.Drawing.Color.LimeGreen
-        Me.LabelHB.Location = New System.Drawing.Point(22, 88)
-        Me.LabelHB.Name = "LabelHB"
-        Me.LabelHB.Size = New System.Drawing.Size(34, 20)
-        Me.LabelHB.TabIndex = 76
-        Me.LabelHB.Text = "HB"
+        Me.Panel7.Controls.Add(Me.Chart3)
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel7.Location = New System.Drawing.Point(111, 0)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(680, 200)
+        Me.Panel7.TabIndex = 79
         '
         'Chart3
         '
@@ -1054,6 +1089,26 @@ Partial Class Dashboard
         Me.Chart3.TabIndex = 68
         Me.Chart3.Text = "Chart2"
         '
+        'Panel6
+        '
+        Me.Panel6.Controls.Add(Me.LabelWaveSpo2)
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel6.Location = New System.Drawing.Point(0, 0)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(111, 200)
+        Me.Panel6.TabIndex = 78
+        '
+        'LabelWaveSpo2
+        '
+        Me.LabelWaveSpo2.AutoSize = True
+        Me.LabelWaveSpo2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelWaveSpo2.ForeColor = System.Drawing.Color.LimeGreen
+        Me.LabelWaveSpo2.Location = New System.Drawing.Point(21, 17)
+        Me.LabelWaveSpo2.Name = "LabelWaveSpo2"
+        Me.LabelWaveSpo2.Size = New System.Drawing.Size(78, 20)
+        Me.LabelWaveSpo2.TabIndex = 77
+        Me.LabelWaveSpo2.Text = "Wave : 0"
+        '
         'Panel12
         '
         Me.Panel12.BackColor = System.Drawing.SystemColors.Control
@@ -1075,6 +1130,7 @@ Partial Class Dashboard
         '
         'ButtonDemo
         '
+        Me.ButtonDemo.Enabled = False
         Me.ButtonDemo.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.ButtonDemo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonDemo.Location = New System.Drawing.Point(631, 14)
@@ -1242,61 +1298,6 @@ Partial Class Dashboard
         Me.ComboBoxPort.Size = New System.Drawing.Size(147, 21)
         Me.ComboBoxPort.TabIndex = 71
         '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.LabelECG)
-        Me.Panel1.Controls.Add(Me.LabelHB)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(111, 204)
-        Me.Panel1.TabIndex = 80
-        '
-        'Panel5
-        '
-        Me.Panel5.Controls.Add(Me.LabelPreassure)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel5.Location = New System.Drawing.Point(0, 0)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(111, 214)
-        Me.Panel5.TabIndex = 80
-        '
-        'Panel6
-        '
-        Me.Panel6.Controls.Add(Me.LabelWaveSpo2)
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel6.Location = New System.Drawing.Point(0, 0)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(111, 200)
-        Me.Panel6.TabIndex = 78
-        '
-        'Panel7
-        '
-        Me.Panel7.Controls.Add(Me.Chart3)
-        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel7.Location = New System.Drawing.Point(111, 0)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(680, 200)
-        Me.Panel7.TabIndex = 79
-        '
-        'Panel8
-        '
-        Me.Panel8.Controls.Add(Me.Chart2)
-        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel8.Location = New System.Drawing.Point(111, 0)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(680, 214)
-        Me.Panel8.TabIndex = 81
-        '
-        'Panel9
-        '
-        Me.Panel9.Controls.Add(Me.Chart1)
-        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel9.Location = New System.Drawing.Point(111, 0)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(680, 204)
-        Me.Panel9.TabIndex = 81
-        '
         'Dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1343,22 +1344,22 @@ Partial Class Dashboard
         Me.PanelTop.PerformLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel13.ResumeLayout(False)
+        Me.Panel9.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.Panel14.ResumeLayout(False)
+        Me.Panel8.ResumeLayout(False)
         CType(Me.Chart2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
         Me.Panel15.ResumeLayout(False)
+        Me.Panel7.ResumeLayout(False)
         CType(Me.Chart3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
         Me.Panel12.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.Panel5.ResumeLayout(False)
-        Me.Panel5.PerformLayout()
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
-        Me.Panel7.ResumeLayout(False)
-        Me.Panel8.ResumeLayout(False)
-        Me.Panel9.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

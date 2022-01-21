@@ -107,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\Firebase.vb" />
+    <Compile Include="Module\Default-Set.vb" />
     <Compile Include="View\Dashboard.Designer.vb">
       <DependentUpon>Dashboard.vb</DependentUpon>
     </Compile>

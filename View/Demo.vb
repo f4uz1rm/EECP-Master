@@ -8,6 +8,8 @@
             TimerDemo.Enabled = True
             Dashboard.ButtonDemo.Text = "STOP DEMO"
             Dashboard.DemoStatus = True
+            SendDataSerialPort("startdemo")
+
             Me.Close()
         Else
             MsgBox("Password Salah", MsgBoxStyle.Information)

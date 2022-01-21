@@ -52,34 +52,41 @@ Module TimerWatch
         TimerReal.Enabled = True
         TimerReal.Interval = 50
         'Timer Received di gunakan untuk menerima data
-        TimerReceived.Interval = 50 ' Optimal 55ms | pada beberapa forum vb mereka mengatakan semakin kecil ms akan memberatkan CPU device yang di gunakan 
+        TimerReceived.Interval = 30 ' Optimal 55ms | pada beberapa forum vb mereka mengatakan semakin kecil ms akan memberatkan CPU device yang di gunakan 
         'Timer Send untuk sementara di gunakan untuk mengirim data start dan stop 
         TimerSend.Interval = 100
         'Timer Revers untuk menghitung mundur pada button start
         TimerRevers.Interval = 1000 ' Untuk menit rubah menjadi 10000
 
-        TimerDemo.Interval = 50 ' Timer Untuk Demo
+        TimerDemo.Interval = 30 ' Timer Untuk Demo
     End Sub
 
     Sub TimerDemo_Tick(sender As Object, e As System.EventArgs) Handles TimerDemo.Tick
         Dim i, j As Integer
+        Dim HB As Integer
         For i = 0 To 25 Step 1
-            LineWaveSpo2(Rnd() * i)
+            LineWaveSpo2(Rnd() * i) 'Random Number
         Next
-    End Sub
-    Public Sub TimerWaktu_Tick(sender As Object, e As System.EventArgs)
-        Debug.WriteLine("Test")
-    End Sub
 
+        HB = 60
+        If HB = 0 Then
+            TimerSend.Interval = 1
+        Else
+            TimerSend.Enabled = True
+            TimerSend.Interval = 60 * 1000 / HB
+        End If
+
+    End Sub
     Public Sub TimerReceived_Tick(sender As Object, e As System.EventArgs) Handles TimerReceived.Tick
         Dim HB As Double 'HB = HeartBeat
-        Dim ColorID As Color = Color.Lime
-        Dim ReceivedData As String = Dashboard.com1.ReadLine() 'Menerima data dari Serial Port ( Jika menggunakan .Readline = Otomatis Enter pada saat penerimaan data
+
+        Dim ReceivedData As String = Dashboard.com1.ReadLine() 'Menerima data dari Serial Port ( Jika menggunakan .Readline = Otomatis Enter pada saat penerimaan data |
+        'jika menggunakan .ReadExisting tidak akan otomatis membuat line baru 
         Dashboard.com1.DiscardInBuffer()
         Dim testArray() As String = ReceivedData.Split(New String() {";"}, StringSplitOptions.None) 'Split untuk memisahkan data 
 
         For Each s As String In testArray
-            'Mengatasi Lag 
+            'Mengatasi Lag dengan melakukan refresh 
             Dashboard.Refresh()
             'Untuk Menampilkan di Label
             Dashboard.LabelWaveSpo2.Text = "Spo Wave : " & vbCrLf & testArray(0)
@@ -99,36 +106,37 @@ Module TimerWatch
             'Line Wave Spo2
             LineWaveSpo2(testArray(0))
 
-            'Line Wave ECG
-            If testArray(2) = 0 Then
-                LineWaveECG(1000)
-            Else
-                LineWaveECG(testArray(2))
-            End If
+            Select Case testArray(2)
+                Case 0
+                    LineWaveECG(1000)
+                Case Else
+                    LineWaveECG(testArray(2))
+            End Select
 
-            'Line STEP WAVE
-            LineWavePressure(testArray(4))
+            'Line Preassure
+            Select Case testArray(4)
+                Case 0
+                    LineWavePressure(1000)
+                Case Else
+                    LineWavePressure(testArray(4))
+            End Select
 
-            'STEP
-            If testArray(4) = 50 Then
-                Dashboard.Panel_I1.BackColor = ColorID
-            ElseIf testArray(4) = 100 Then
-                Dashboard.Panel_I2.BackColor = ColorID
-            ElseIf testArray(4) = 150 Then
-                Dashboard.Panel_I2.BackColor = ColorID
-                Dashboard.Panel_I3.BackColor = ColorID
-            ElseIf testArray(4) = 0 Then
-                DefaultID()
-            End If
+            'Indikator SideBar and Led 
+            Select Case testArray(4)
+                Case 50
+                    Dashboard.Panel_I1.BackColor = ColorID
+                Case 100
+                    Dashboard.Panel_I2.BackColor = ColorID
+                Case 150
+                    Dashboard.Panel_I2.BackColor = ColorID
+                    Dashboard.Panel_I3.BackColor = ColorID
+                Case Else
+                    DefaultID()
+            End Select
         Next
     End Sub
-    Sub DefaultID()
-        Dashboard.Panel_I1.BackColor = System.Drawing.Color.FromArgb(30, 38, 52)
-        Dashboard.Panel_I2.BackColor = System.Drawing.Color.FromArgb(30, 38, 52)
-        Dashboard.Panel_I3.BackColor = System.Drawing.Color.FromArgb(30, 38, 52)
-    End Sub
     Public Sub TimerSend_Tick(sender As Object, e As System.EventArgs) Handles TimerSend.Tick
-        SendDataSerialPort("-") ' katakter q = perintah untuk menyalakan lampu pada alat
+        SendDataSerialPort("q") ' katakter q = perintah untuk menyalakan lampu pada alat
     End Sub
     Private Sub TimerReal_Tick(sender As Object, e As EventArgs) Handles TimerReal.Tick
         Dashboard.LabelDateDay.Text = Today
@@ -137,10 +145,7 @@ Module TimerWatch
         If TimerReceived.Enabled = False Then
             LineWaveSpo2(500)
             LineWaveECG(500)
-            LineWavePressure(500) ' Memanggil Fungsi LineWace pada Modul Wave
-
-            'Memanggil Fungsi LineWave pada Modul Wave
-            'LineWavePressure(50) ' Memanggil Fungsi LineWace pada Modul Wave
+            LineWavePressure(500)
         ElseIf TimerReceived.Enabled = True Then
 
         End If
@@ -158,6 +163,4 @@ Module TimerWatch
             Dashboard.ButtonStart.Text = Seconds
         End If
     End Sub
-
-
 End Module

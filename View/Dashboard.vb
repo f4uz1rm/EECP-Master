@@ -24,6 +24,7 @@ Public Class Dashboard
             DemoStatus = False
             TimerDemo.Enabled = False
             ButtonDemo.Text = "DEMO"
+            SendDataSerialPort("stopdemo")
         Else
             Demo.Show()
         End If
@@ -244,7 +245,7 @@ Public Class Dashboard
         ButtonStep.Enabled = True
         ButtonSave.Enabled = True
         ButtonPatient.Enabled = True
-        ButtonDemo.Enabled = False
+        ButtonDemo.Enabled = True
 
     End Sub
     Sub ButtonDisable()
@@ -258,7 +259,7 @@ Public Class Dashboard
         ButtonStep.Enabled = False
         ButtonSave.Enabled = False
         ButtonPatient.Enabled = False
-        ButtonDemo.Enabled = True
+        ButtonDemo.Enabled = False
     End Sub
     Dim WindowsState As Boolean = True
     Private Sub PanelTop_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles PanelTop.MouseDoubleClick
@@ -302,7 +303,8 @@ Public Class Dashboard
     End Sub
 
     Private Sub Dashboard_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        ButtonExit.PerformClick()
+        Me.Close()
+
     End Sub
 End Class
 'Untuk yang melanjutkan EECP, Semangat yaa aplikasi sedikit lagi beres
