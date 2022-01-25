@@ -894,12 +894,12 @@ Partial Class Dashboard
         Me.Chart1.Name = "Chart1"
         Series1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center
         Series1.ChartArea = "ChartArea1"
-        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
         Series1.Color = System.Drawing.Color.Lime
         Series1.Name = "ecg1a"
         Series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[Double]
         Series2.ChartArea = "ChartArea1"
-        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline
         Series2.Color = System.Drawing.Color.Lime
         Series2.Name = "ecg1b"
         Me.Chart1.Series.Add(Series1)
@@ -1077,11 +1077,13 @@ Partial Class Dashboard
         Series5.ChartArea = "ChartArea1"
         Series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
         Series5.Color = System.Drawing.Color.Lime
+        Series5.Legend = "Legend1"
         Series5.Name = "spo2a"
-        Series5.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.[Double]
+        Series5.YValuesPerPoint = 5
         Series6.ChartArea = "ChartArea1"
         Series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
         Series6.Color = System.Drawing.Color.Lime
+        Series6.Legend = "Legend1"
         Series6.Name = "spo2b"
         Me.Chart3.Series.Add(Series5)
         Me.Chart3.Series.Add(Series6)

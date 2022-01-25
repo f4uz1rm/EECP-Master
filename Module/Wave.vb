@@ -65,6 +65,7 @@
                 GainEcg2 = 0
                 Dashboard.Chart1.Series("ecg1a").Points.RemoveAt(0)
                 Dashboard.Chart1.Series("ecg1b").Points.Clear()
+
         End Select
 
         Select Case GainEcg1

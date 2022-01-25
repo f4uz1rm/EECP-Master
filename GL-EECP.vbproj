@@ -160,6 +160,12 @@
     <Compile Include="View\QrCode.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="View\ViewDataGrid.Designer.vb">
+      <DependentUpon>ViewDataGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewDataGrid.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\Dashboard.resx">
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\QrCode.resx">
       <DependentUpon>QrCode.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewDataGrid.resx">
+      <DependentUpon>ViewDataGrid.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

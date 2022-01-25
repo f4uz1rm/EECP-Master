@@ -207,7 +207,6 @@ Public Class Dashboard
         Try
             com1 = My.Computer.Ports.OpenSerialPort(ComboBoxPort.SelectedItem)
             com1.BaudRate = 115200
-            com1.ReadTimeout = 20000
             TimerReceived.Enabled = True
             LabelPort.Text = "CONNECT"
             LabelPort.ForeColor = Color.Lime
@@ -302,9 +301,13 @@ Public Class Dashboard
         QrCode.Show()
     End Sub
 
-    Private Sub Dashboard_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        Me.Close()
 
+    Private Sub LabelWaveSpo2_Click(sender As Object, e As EventArgs) Handles LabelWaveSpo2.Click
+
+    End Sub
+
+    Private Sub LabelECG_Click(sender As Object, e As EventArgs) Handles LabelECG.Click
+        ViewDataGrid.Show()
     End Sub
 End Class
 'Untuk yang melanjutkan EECP, Semangat yaa aplikasi sedikit lagi beres
