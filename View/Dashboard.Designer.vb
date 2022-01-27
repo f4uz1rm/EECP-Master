@@ -60,7 +60,7 @@ Partial Class Dashboard
         Me.LabelAmpSpo = New System.Windows.Forms.Label()
         Me.ButtonMin = New System.Windows.Forms.Button()
         Me.ButtonPlus = New System.Windows.Forms.Button()
-        Me.Label35 = New System.Windows.Forms.Label()
+        Me.LabelSpo2Resp = New System.Windows.Forms.Label()
         Me.PanelSPO = New System.Windows.Forms.Panel()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.PanelECGControl = New System.Windows.Forms.Panel()
@@ -399,7 +399,7 @@ Partial Class Dashboard
         Me.PanelSPO2Control.Controls.Add(Me.LabelAmpSpo)
         Me.PanelSPO2Control.Controls.Add(Me.ButtonMin)
         Me.PanelSPO2Control.Controls.Add(Me.ButtonPlus)
-        Me.PanelSPO2Control.Controls.Add(Me.Label35)
+        Me.PanelSPO2Control.Controls.Add(Me.LabelSpo2Resp)
         Me.PanelSPO2Control.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelSPO2Control.Location = New System.Drawing.Point(0, 442)
         Me.PanelSPO2Control.Name = "PanelSPO2Control"
@@ -483,16 +483,16 @@ Partial Class Dashboard
         Me.ButtonPlus.Text = ">"
         Me.ButtonPlus.UseVisualStyleBackColor = False
         '
-        'Label35
+        'LabelSpo2Resp
         '
-        Me.Label35.AutoSize = True
-        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label35.ForeColor = System.Drawing.Color.Black
-        Me.Label35.Location = New System.Drawing.Point(107, 14)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(34, 13)
-        Me.Label35.TabIndex = 7
-        Me.Label35.Text = "85 %"
+        Me.LabelSpo2Resp.AutoSize = True
+        Me.LabelSpo2Resp.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelSpo2Resp.ForeColor = System.Drawing.Color.Black
+        Me.LabelSpo2Resp.Location = New System.Drawing.Point(107, 14)
+        Me.LabelSpo2Resp.Name = "LabelSpo2Resp"
+        Me.LabelSpo2Resp.Size = New System.Drawing.Size(34, 13)
+        Me.LabelSpo2Resp.TabIndex = 7
+        Me.LabelSpo2Resp.Text = "85 %"
         '
         'PanelSPO
         '
@@ -1424,7 +1424,7 @@ Partial Class Dashboard
     Friend WithEvents LabelAmpSpo As Label
     Friend WithEvents ButtonMin As Button
     Friend WithEvents ButtonPlus As Button
-    Friend WithEvents Label35 As Label
+    Friend WithEvents LabelSpo2Resp As Label
     Friend WithEvents PanelSPO As Panel
     Friend WithEvents Label36 As Label
     Friend WithEvents LabelTimerCompressor As Label

@@ -52,7 +52,7 @@ Module TimerWatch
         TimerReal.Enabled = True
         TimerReal.Interval = 50
         'Timer Received di gunakan untuk menerima data
-        TimerReceived.Interval = 1 ' Optimal 55ms | pada beberapa forum vb mereka mengatakan semakin kecil ms akan memberatkan CPU device yang di gunakan 
+        TimerReceived.Interval = 30 ' Optimal 55ms | pada beberapa forum vb mereka mengatakan semakin kecil ms akan memberatkan CPU device yang di gunakan 
         'Timer Send untuk sementara di gunakan untuk mengirim data start dan stop 
         TimerSend.Interval = 100
         'Timer Revers untuk menghitung mundur pada button start
@@ -90,17 +90,19 @@ Module TimerWatch
 
 
         'Mengatasi Lag dengan melakukan refresh 
-        'Dashboard.Refresh()
+        Dashboard.Refresh()
         'Untuk Menampilkan di Label
         'Dashboard.com1.DiscardInBuffer()
 
-        Dashboard.com1.DiscardInBuffer()
+        Dashboard.com1.DiscardInBuffer() 'Berfungsi Menghapus Data Qeueu
 
         Dashboard.LabelWaveSpo2.Text = "Spo Wave : " & vbCrLf & testArray(0)
         Dashboard.LabelHB.Text = "HB : " & vbCrLf & testArray(1)
         Dashboard.LabelECG.Text = "ECG Wave " & vbCrLf & testArray(2)
         Dashboard.LabelMmhg.Text = testArray(3)
         Dashboard.LabelPreassure.Text = "Preassure : " & vbCrLf & testArray(4)
+        Dashboard.LabelSpo2Resp.Text = testArray(5) & " % "
+
         'HB
         HB = testArray(1)
         If HB = 0 Then
@@ -117,7 +119,7 @@ Module TimerWatch
 
         Select Case testArray(2)
             Case 0
-                'LineWaveECG(1000)
+                LineWaveECG(1000)
             Case Else
                 LineWaveECG(testArray(2))
                 AddDataGridView(testArray(2))
